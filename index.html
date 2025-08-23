@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Home • Jinkwang Kim</title>
+  <meta name="description" content="Home of Jinkwang Kim" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#f8fafc; --text:#0b0d10; --muted:#4b5563;
+      --card:#ffffff; --accent:#7c3aed; --ring:#7c3aed;
+      --shadow:0 10px 25px rgba(0,0,0,.08);
+    }
+    body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+         background:var(--bg);color:var(--text);line-height:1.6}
+    a{color:var(--text);text-decoration:none}
+    .container{max-width:1000px;margin:0 auto;padding:24px}
+    .nav{position:sticky;top:0;background:rgba(248,250,252,.8);
+         backdrop-filter:saturate(160%) blur(8px);
+         border-bottom:1px solid rgba(0,0,0,.06);z-index:10}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .logo{font-weight:800;letter-spacing:.3px}
+    .menu{display:flex;gap:16px;flex-wrap:wrap}
+    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:24px;
+          align-items:center;padding:56px 0}
+    @media (max-width:900px){.hero{grid-template-columns:1fr}}
+    .pill{display:inline-block;padding:6px 12px;border-radius:999px;
+          border:1px solid rgba(0,0,0,.12);color:var(--muted);font-size:12px}
+    .title{font-size:40px;line-height:1.15;margin:12px 0 8px}
+    /* ⬇ 히어로 문구만 크게 강조 */
+    .hero .subtitle{
+      font-size:clamp(12px,3vw,28px);
+      font-weight:450;
+      letter-spacing:.3px;
+      color:var(--text);
+      margin:0 0 20px;
+    }
+    .card{background:var(--card);border:1px solid rgba(0,0,0,.06);
+          border-radius:16px;padding:18px}
+    .grid{display:grid;gap:16px;grid-template-columns:repeat(3,1fr)}
+    @media (max-width:900px){.grid{grid-template-columns:1fr 1fr}}
+    @media (max-width:640px){.grid{grid-template-columns:1fr}}
+    .section{padding:28px 0}
+    .footer{border-top:1px solid rgba(0,0,0,.08);color:var(--muted);
+            padding:28px 0;margin-top:40px}
+  </style>
+  <!-- Cloudflare Web Analytics -->
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js"
+    data-cf-beacon='{"token":"YOUR_TOKEN_HERE"}'></script>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <div class="logo">JK<span class="accent">.</span></div>
+      <nav class="menu">
+        <a href="index.html">Home</a>
+        <a href="research.html">Research</a>
+        <a href="publications.html">Publications</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero" id="home">
+      <div>
+        <span class="pill">Welcome 👋</span>
+        <h1 class="title">Jinkwang Kim</h1>
+        <p class="subtitle">Enjoy advancing science, molecule by molecule!</p>
+      </div>
+      <div>
+        <!-- ⬇ 사진을 약 1/8 크기 느낌으로 축소 -->
+        <img src="대문사진.jpg" alt="Portrait of Jinkwang Kim"
+             style="width:70%; border-radius:62px; object-fit:cover;" />
+      </div>
+    </section>
+
+    <section id="sections" class="section">
+      <h2>Explore</h2>
+      <div class="grid">
+        <a class="card" href="research.html" style="display:block">
+          <h3 style="margin:0 0 6px">Research</h3>
+          <p class="subtitle" style="margin:0">Interests, methods, and demo videos.</p>
+        </a>
+        <a class="card" href="publications.html" style="display:block">
+          <h3 style="margin:0 0 6px">Publications</h3>
+          <p class="subtitle" style="margin:0">Selected works • full list on ORCID.</p>
+        </a>
+        <a class="card" href="contact.html" style="display:block">
+          <h3 style="margin:0 0 6px">Contact</h3>
+          <p class="subtitle" style="margin:0">Email, phone, address, and CV.</p>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="container footer">
+    <div>© <span id="year"></span> Jinkwang Kim. All rights reserved.</div>
+  </footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
